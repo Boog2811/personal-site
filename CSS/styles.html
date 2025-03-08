@@ -5,10 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Embedded Style Sheet-->
 <style>
-    
+    /*This sets the entire background of the webpage to be light blue.*/
+    body {
+        background: lightblue;
+    }
+    /*This makes all h2 tags blue and center aligned.*/
+    h2 {
+        color: blue;
+        text-align: center;
+    }
 </style>
 </head>
 <body>
+    <h1><a href="index.html">Return to Original Page for CSS Assignment</a></h1>
     <h1>This is a page to test using embedded and inline style sheets</h1>
+    <!--I include an inline style here to make this text smaller since it is intended to be a passing comment/joke, and not a core part of the webpage-->
+    <p style="font-size: 0.75em;">My apologies in advance for the colors that should <b>not</b> go together on a web page</p>
+    <h2>All h2 tags are blue and centered!</h2>
+    <!--I use another inline style here to show the cascading nature of CSS, overwriting the color but keeping the center alignment.-->
+    <h2 style="color:red;">This h2 tag has an inline style to override the color of the embedded style.<br>This shows off the cascading nature of CSS.</h2>
+    <!--This inline style is just to play around with a border.-->
+    <span style="border: 1px solid black;">You can even add borders to different elements.</span>
 </body>
 </html>

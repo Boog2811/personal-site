@@ -2,8 +2,13 @@
 #linktree {
     text-align: right;
     font-size: 0.75em;
-    /*display: block is needed sine this will be applied to an <a> tag, which is inline by default, therefore it cannot be aligned to the right.*/
+    /*display: block is needed since this will be applied to an <a> tag, which is inline by default, therefore it cannot be aligned to the right.*/
     display: block;
+}
+/*Due to the way that <a> tags are designed, an additional container is required to make the link properly right aligned, without phantom links left behind.*/
+.link-container {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /*Class style for making selected elements blue & centered*/

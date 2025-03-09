@@ -1,0 +1,32 @@
+/*This id style is intended for my linktr.ee link at the bottom of my page. It sets it off the to the right and makes it smaller in order to make it less distracting.*/
+#linktree {
+    text-align: right;
+    font-size: 0.75em;
+    /*display: block is needed sine this will be applied to an <a> tag, which is inline by default, therefore it cannot be aligned to the right.*/
+    display: block;
+}
+
+/*Class style for making selected elements blue & centered*/
+.blue-center {
+    color: blue;
+    text-align: center;
+}
+
+/*Below I've also added some CSS styles that cover the entire body tag, but are responsive based on the max-width of the viewing device, therefore making the text bigger for larger devices, and smaller for smaller devices*/
+body {
+    font-size: 18px;
+}
+
+/*For very small computer screen's, tablets, and landscape phones*/
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/*For portrait phones*/
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+}

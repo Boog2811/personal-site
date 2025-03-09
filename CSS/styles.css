@@ -6,7 +6,27 @@
     display: block;
 }
 
+/*Class style for making selected elements blue & centered*/
 .blue-center {
     color: blue;
     text-align: center;
+}
+
+/*Below I've also added some CSS styles that cover the entire body tag, but are responsive based on the max-width of the viewing device, therefore making the text bigger for larger devices, and smaller for smaller devices*/
+body {
+    font-size: 18px;
+}
+
+/*For very small computer screen's, tablets, and landscape phones*/
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/*For portrait phones*/
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
 }

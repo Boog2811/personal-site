@@ -16,13 +16,23 @@
     <h1 class="blue-center">Contact</h1>
     <h1>Contact Me</h1>
     <!--Reminder that this form isn't attached to anything in the backend, so the info given by users does *not* get stored.-->
-    <form>
+    <form id="inputForm">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br>
-        <label for="reason">Reason for Contact:</label><br>
-        <input type="text" id="reason" name="reason"><br>
+        <label for="age">Age:</label><br>
+        <input type="text" id="age" name="age"><br>
+        <label for="game">Favorite Game:</label><br>
+        <input type="text" id="game" name="game"><br>
         <input type="submit" value="Submit">
     </form>
+
+    <p id="results"></p>
+
+    <button type="button" id="inspirationalButton">Press me for an inspirational message!</button>
+
+    <p id="inspirationalMessage"></p>
+
+    <script src="proj2.js" defer></script>
 
     <div class="link-container">
         <a id="linktree" href="https://linktr.ee/Boog2811" target="_blank">Find me elsewhere on the internet!</a>

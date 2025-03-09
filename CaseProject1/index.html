@@ -21,6 +21,29 @@
     <h2>Plan for this Semester</h2>
     <p>For this semester, I plan to flesh out this page to hold more and more information about myself, eventually being able to make it into a personal site for people to learn more about me.</p>
 
+    
+    <p>Please type your name in the box below and then click the button.</p>
+    <input type="text" id="name">
+    <button type="button" id="alertButton">Click for a surprise!</button>
+
+    
+    <script>
+        //This script creates a simple alert when the user clicks the button.
+        //This is how the script knows when the button is pressed, and moves on to run the rest of the code inside the curly brackets
+        document.getElementById("alertButton").addEventListener("click", function() {
+            //This gets the text the user placed into the input field
+            let name = document.getElementById("name").value;
+            //This checks to make sure the user did type something into the box.
+            if (name.trim() !== "") {
+                //If they did type something in, the webpage responds with an alert saying hi and their name.
+                alert("Hi " + name + "!")
+            } else {
+                //If the input field was empty, the webpage responds with an alert asking the user to type their name before clicking the button.
+                alert("Please enter your name before clicking the button.")
+            }
+        });
+    </script>
+
     <div class="link-container">
         <a id="linktree" href="https://linktr.ee/Boog2811" target="_blank">Find me elsewhere on the internet!</a>
     </div>

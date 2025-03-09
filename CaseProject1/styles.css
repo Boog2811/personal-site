@@ -8,8 +8,41 @@
 
 /*Class style for making selected elements blue & centered*/
 .blue-center {
-    color: blue;
+    color: #0147fa;
     text-align: center;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+  
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: lightblue;
+    color: black;
+}
+  
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/*Pushes the portal link (the one with each assignment on it) to the far right*/
+.topnav a.portal {
+    float: right;
 }
 
 /*Below I've also added some CSS styles that cover the entire body tag, but are responsive based on the max-width of the viewing device, therefore making the text bigger for larger devices, and smaller for smaller devices*/

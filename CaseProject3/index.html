@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="index.html" class="active">Home</a>
+        <a href="games.html">Games</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="primes.html">Primes</a>
+        <a href="../index.html" class="portal">Portal</a>
+    </div>
+    <h1 class="blue-center">James Emanuel</h1>
+    <h2 class="blue-center">The requirements for Case Project 3 are on the <a href="primes.html">Primes</a> Page.</h2>
+    <p>Hello everyone! This is a personal site for you to learn more about me and connect with me if desired!</p>
+    <p>If you'd like to learn more about me, please go to the <a href="about.html">About</a> page!</p>
+    <p>If you'd like to contact me, please go to the <a href="contact.html">Contact</a> page!</p>
+    <!--Due to the addition of the other pages, most of the content of the site has been moved off of the Home/Index page, but this page will be populated with more as time passes.-->
+    <h2>Plan for this Semester</h2>
+    <p>For this semester, I plan to flesh out this page to hold more and more information about myself, eventually being able to make it into a personal site for people to learn more about me.</p>
+
+    
+    <p>Please type your name in the box below and then click the button.</p>
+    <input type="text" id="name">
+    <button type="button" id="alertButton">Click for a surprise!</button>
+
+    
+    <script>
+        //This script creates a simple alert when the user clicks the button.
+        //This is how the script knows when the button is pressed, and moves on to run the rest of the code inside the curly brackets
+        document.getElementById("alertButton").addEventListener("click", function() {
+            //This gets the text the user placed into the input field
+            let name = document.getElementById("name").value;
+            //This checks to make sure the user did type something into the box.
+            if (name.trim() !== "") {
+                //If they did type something in, the webpage responds with an alert saying hi and their name.
+                alert("Hi " + name + "!")
+            } else {
+                //If the input field was empty, the webpage responds with an alert asking the user to type their name before clicking the button.
+                alert("Please enter your name before clicking the button.")
+            }
+        });
+    </script>
+
+    <div class="link-container">
+        <a id="linktree" href="https://linktr.ee/Boog2811" target="_blank">Find me elsewhere on the internet!</a>
+    </div>
+
+</body>
+</html>

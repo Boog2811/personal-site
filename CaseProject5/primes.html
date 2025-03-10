@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="primes.html" class="active">Primes</a>
+        <a href="../index.html" class="portal">Portal</a>
+    </div>
+    <h2 class="blue-center">Primes</h2>
+    <p>This page will display all of the numbers from 1 to the typed number when you push the button, and if they are prime or composite.</p>
+
+    <!--Short form to accept the number input from the user-->
+    <form id="inputForm">
+        <label for="maxNum">Max Number:</label><br>
+        <input type="text" id="maxNum" name="maxNum"><br>
+    </form>
+    <button type="button" id="primeButton">Press me to display all the primes!</button>
+
+    <!--Tag for error handling if the user inputs nothing or does not enter a number.-->
+    <p id="errorTextBox"></p>
+
+    <!--Tags that actually display the numbers-->
+    <p><strong>Primes: </strong> <span id="printPrimes"></span></p>
+    <p><strong>Composites: </strong> <span id="printComposites"></span></p>
+
+
+    <script src="primes.js" defer></script>
+
+    <div class="link-container">
+        <a id="linktree" href="https://linktr.ee/Boog2811" target="_blank">Find me elsewhere on the internet!</a>
+    </div>
+
+</body>
+</html>

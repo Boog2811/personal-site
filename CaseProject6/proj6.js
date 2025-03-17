@@ -18,6 +18,9 @@ function validateSignUp(event) {
     let uppercaseCheck = /[A-Z]/;
     let passwordSpecialCharactersCheck = /[!@#$%^&*]/;
 
+    //Phone Number
+    let phoneNumberCheck = /^\d{3}-\d{3}-\d{4}$/;
+
 
     //Full Name Validation
     //Full name must be a non-empty string (no numbers or special characters).
@@ -99,8 +102,22 @@ function validateSignUp(event) {
     let confirmPasswordErrorStart = "Your passwords ";
     let confirmPasswordErrorMessages = [];
     try {
-        if (confirmPassword != password) confirmPasswordErrorMessages.push("do not match");
+        if (confirmPassword != password) confirmPasswordErrorMessages.push("do not match"); //checks if the passwords do not match
         if (confirmPasswordErrorMessages.length > 0) throw confirmPasswordErrorStart + confirmPasswordErrorMessages.join() + ".";
+    }
+    catch (error) {
+        console.log(error);
+    }
+
+    //Phone Number Validation
+    //Must match the password exactly.
+    let phoneNumber = document.forms["signUpForm"].elements["phoneNumber"].value;
+    let phoneNumberErrorStart = "Your passwords ";
+    let phoneNumberErrorMessages = [];
+    try {
+        if (phoneNumber.trim() == "") phoneNumberErrorMessages.push("is empty"); //checking for non-empty string
+        if (!phoneNumberCheck.test(phoneNumber)) phoneNumberErrorMessages.push("is not valid");
+        if (phoneNumberErrorMessages.length > 0) throw phoneNumberErrorStart + phoneNumberErrorMessages.join(" + ") + ".";
     }
     catch (error) {
         console.log(error);

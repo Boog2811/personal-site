@@ -49,6 +49,22 @@ function validateSignUp(event) {
     catch (error) {
         console.log(error);
     }
+
+    //Email Validation
+    //Email must be a valid email format (e.g., user@example.com).
+    //only contain letters and numbers (no special characters)
+    //and cannot start with a number.
+    let email = document.forms["signUpForm"].elements["email"].value;
+    let emailErrorStart = "Your email ";
+    let emailErrorMessages = [];
+    try {
+        if (email.trim() == "") emailErrorMessages.push("is empty"); //checking for non-empty string
+        if (!emailCheck.test(email)) emailErrorMessages.push("is invalid"); //checking against email regex
+        if (emailErrorMessages.length > 0) throw emailErrorStart + emailErrorMessages.join(" + ") + ".";
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 

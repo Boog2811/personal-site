@@ -140,6 +140,21 @@ function validateSignUp(event) {
         console.log(error);
     }
 
+    //Checkbox Validation
+    let checkbox = document.forms["signUpForm"].elements["termsAndConditions"];
+    let checkboxErrorStart = "You ";
+    let checkboxErrorMessages = [];
+
+    try {
+        if (!checkbox.checked) { //checks if the user did not agree to the terms and conditions
+            checkboxErrorMessages.push("did not agree to the terms and conditions");
+            throw checkboxErrorStart + checkboxErrorMessages.join() + ".";
+        }
+    }
+    catch (error) {
+        console.log(error);
+    }
+
 }
 
 

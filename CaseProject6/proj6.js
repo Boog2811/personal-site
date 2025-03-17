@@ -1,5 +1,6 @@
 function validateSignUp(event) {
     event.preventDefault();
+    document.getElementById("incorrectSubmission").innerHTML = ""; //resets the incorrect submission information so it does not persist between multiple attempted submissions
     
     //Regex
     //All of the Regular Expressions needed for the validation of inputs, they will be categprized based on the first validation that uses them
@@ -14,12 +15,15 @@ function validateSignUp(event) {
     let emailCheck = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/; //checks if the string is an email (not fully compliant with RFC 5322)
 
     //Password
-    let lowercaseCheck = /[a-z]/;
-    let uppercaseCheck = /[A-Z]/;
-    let passwordSpecialCharactersCheck = /[!@#$%^&*]/;
+    let lowercaseCheck = /[a-z]/; //checks for lowercase letters
+    let uppercaseCheck = /[A-Z]/; //checks for uppercase letters
+    let passwordSpecialCharactersCheck = /[!@#$%^&*]/; //checks for the given eligible special characters for passwords
 
     //Phone Number
-    let phoneNumberCheck = /^\d{3}-\d{3}-\d{4}$/;
+    let phoneNumberCheck = /^\d{3}-\d{3}-\d{4}$/; //checks for a phone number in the format 123-456-7890
+
+
+    let incorrectFields = 0; //variable to track how many fields are incorrect
 
 
     //Full Name Validation
@@ -34,6 +38,14 @@ function validateSignUp(event) {
         if (fullNameErrorMessages.length > 0) throw fullNameErrorStart + fullNameErrorMessages.join(" + ") + ".";
     }
     catch (error) {
+        incorrectFields++;
+
+        //showing the user their mistake
+        let fullNameMistake = document.createElement("p");
+        fullNameMistake.textContent = error;
+        document.getElementById("incorrectSubmission").appendChild(fullNameMistake);
+
+        //putting the error in the console
         console.error(error);
     }
 
@@ -53,6 +65,14 @@ function validateSignUp(event) {
         if (usernameErrorMessages.length > 0) throw usernameErrorStart + usernameErrorMessages.join(" + ") + ".";
     }
     catch (error) {
+        incorrectFields++;
+
+        //showing the user their mistake
+        let usernameMistake = document.createElement("p");
+        usernameMistake.textContent = error;
+        document.getElementById("incorrectSubmission").appendChild(usernameMistake);
+
+        //putting the error in the console
         console.error(error);
     }
 
@@ -69,6 +89,14 @@ function validateSignUp(event) {
         if (emailErrorMessages.length > 0) throw emailErrorStart + emailErrorMessages.join(" + ") + ".";
     }
     catch (error) {
+        incorrectFields++;
+
+        //showing the user their mistake
+        let emailMistake = document.createElement("p");
+        emailMistake.textContent = error;
+        document.getElementById("incorrectSubmission").appendChild(emailMistake);
+
+        //putting the error in the console
         console.error(error);
     }
 
@@ -93,6 +121,14 @@ function validateSignUp(event) {
         if (passwordErrorMessages.length > 0) throw passwordErrorStart + passwordErrorMessages.join(" + ") + ".";
     }
     catch (error) {
+        incorrectFields++;
+
+        //showing the user their mistake
+        let passwordMistake = document.createElement("p");
+        passwordMistake.textContent = error;
+        document.getElementById("incorrectSubmission").appendChild(passwordMistake);
+
+        //putting the error in the console
         console.error(error);
     }
 
@@ -102,17 +138,25 @@ function validateSignUp(event) {
     let confirmPasswordErrorStart = "Your passwords ";
     let confirmPasswordErrorMessages = [];
     try {
-        if (confirmPassword != password) confirmPasswordErrorMessages.push("do not match"); //checks if the passwords do not match
+        if (confirmPassword !== password) confirmPasswordErrorMessages.push("do not match"); //checks if the passwords do not match
         if (confirmPasswordErrorMessages.length > 0) throw confirmPasswordErrorStart + confirmPasswordErrorMessages.join() + ".";
     }
     catch (error) {
+        incorrectFields++;
+
+        //showing the user their mistake
+        let passwordConfirmMistake = document.createElement("p");
+        passwordConfirmMistake.textContent = error;
+        document.getElementById("incorrectSubmission").appendChild(passwordConfirmMistake);
+
+        //putting the error in the console
         console.error(error);
     }
 
     //Phone Number Validation
     //Must match the password exactly.
     let phoneNumber = document.forms["signUpForm"].elements["phoneNumber"].value;
-    let phoneNumberErrorStart = "Your passwords ";
+    let phoneNumberErrorStart = "Your phone number ";
     let phoneNumberErrorMessages = [];
     try {
         if (phoneNumber.trim() == "") phoneNumberErrorMessages.push("is empty"); //checking for non-empty string
@@ -120,6 +164,14 @@ function validateSignUp(event) {
         if (phoneNumberErrorMessages.length > 0) throw phoneNumberErrorStart + phoneNumberErrorMessages.join(" + ") + ".";
     }
     catch (error) {
+        incorrectFields++;
+
+        //showing the user their mistake
+        let phoneNumberMistake = document.createElement("p");
+        phoneNumberMistake.textContent = error;
+        document.getElementById("incorrectSubmission").appendChild(phoneNumberMistake);
+
+        //putting the error in the console
         console.error(error);
     }
 
@@ -127,16 +179,27 @@ function validateSignUp(event) {
     let dateOfBirthInput = document.forms["signUpForm"].elements["dateOfBirth"].value; //initially storing the input as is to check for an empty string later
     let dateOfBirth = new Date(dateOfBirthInput); //converting the input from the user into a Date object
     const today = new Date(); //creating a variable of today's date
-    const age = today.getFullYear() - dateOfBirth.getFullYear();
+    const ageDifference = today - dateOfBirth;
+    console.log(ageDifference);
+    const age = Math.floor(ageDifference / (1000 * 60 * 60 * 24 * 365.25)); //properly checks if the user is over 18 even if their birthday hasn't happened in the current year
+    //the numbers in this math is milliseconds * seconds * minutes * hours * days in a year since when doing today - dateOfBirth, it gives you the number of milliseconds of difference
     let dateOfBirthErrorStart = "Your age ";
     let dateOfBirthErrorMessages = [];
 
     try {
         if (dateOfBirthInput.trim() == "") dateOfBirthErrorMessages.push("is empty"); //checking for non-empty string
-        if (age < 18 ) dateOfBirthErrorMessages.push("is under 18");
+        if (age < 18 ) dateOfBirthErrorMessages.push("is under 18 years old");
         if (dateOfBirthErrorMessages.length > 0) throw dateOfBirthErrorStart + dateOfBirthErrorMessages.join(" + ") + ".";
     }
     catch (error) {
+        incorrectFields++;
+
+        //showing the user their mistake
+        let dateOfBirthMistake = document.createElement("p");
+        dateOfBirthMistake.textContent = error;
+        document.getElementById("incorrectSubmission").appendChild(dateOfBirthMistake);
+
+        //putting the error in the console
         console.error(error);
     }
 
@@ -152,8 +215,20 @@ function validateSignUp(event) {
         }
     }
     catch (error) {
+        incorrectFields++;
+
+        //showing the user their mistake
+        let checkboxMistake = document.createElement("p");
+        checkboxMistake.textContent = error;
+        document.getElementById("incorrectSubmission").appendChild(checkboxMistake);
+
+        //putting the error in the console
         console.error(error);
     }
+
+    //showing the user the number of incorrect fields they had, or telling them their submission was correct
+    if (incorrectFields > 0) document.getElementById("incorrectFields").innerText = "You had " + incorrectFields + " incorrect fields, as listed below:";
+    else document.getElementById("correctSubmission").innerText = "Your submission was correct. Your account has been created (not really though, there's no database connected)."
 
 }
 

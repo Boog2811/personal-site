@@ -122,6 +122,24 @@ function validateSignUp(event) {
     catch (error) {
         console.log(error);
     }
+
+    //Date of Birth Validation
+    let dateOfBirthInput = document.forms["signUpForm"].elements["dateOfBirth"].value; //initially storing the input as is to check for an empty string later
+    let dateOfBirth = new Date(dateOfBirthInput); //converting the input from the user into a Date object
+    const today = new Date(); //creating a variable of today's date
+    const age = today.getFullYear() - dateOfBirth.getFullYear();
+    let dateOfBirthErrorStart = "Your age ";
+    let dateOfBirthErrorMessages = [];
+
+    try {
+        if (dateOfBirthInput.trim() == "") dateOfBirthErrorMessages.push("is empty"); //checking for non-empty string
+        if (age < 18 ) dateOfBirthErrorMessages.push("is under 18");
+        if (dateOfBirthErrorMessages.length > 0) throw dateOfBirthErrorStart + dateOfBirthErrorMessages.join(" + ") + ".";
+    }
+    catch (error) {
+        console.log(error);
+    }
+
 }
 
 

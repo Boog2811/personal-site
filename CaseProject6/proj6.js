@@ -13,7 +13,10 @@ function validateSignUp(event) {
     //Email
     let emailCheck = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/; //checks if the string is an email (not fully compliant with RFC 5322)
 
-    //  
+    //Password
+    let lowercaseCheck = /[a-z]/;
+    let uppercaseCheck = /[A-Z]/;
+    let passwordSpecialCharactersCheck = /[!@#$%^&*]/;
 
 
     //Full Name Validation
@@ -61,6 +64,43 @@ function validateSignUp(event) {
         if (email.trim() == "") emailErrorMessages.push("is empty"); //checking for non-empty string
         if (!emailCheck.test(email)) emailErrorMessages.push("is invalid"); //checking against email regex
         if (emailErrorMessages.length > 0) throw emailErrorStart + emailErrorMessages.join(" + ") + ".";
+    }
+    catch (error) {
+        console.log(error);
+    }
+
+    //Password Validation
+    //Must be between 8 and 20 characters
+    //containing at least:
+        //one uppercase letter
+        //one lowercase letter
+        //one digit
+        //and one special character (!@#$%^&*).
+    let password = document.forms["signUpForm"].elements["password"].value;
+    let passwordErrorStart = "Your password ";
+    let passwordErrorMessages = [];
+    try {
+        if (password.trim() == "") passwordErrorMessages.push("is empty"); //checking for non-empty string
+        if (password.length < 8) passwordErrorMessages.push("is too short"); //checking for less than 8 characters
+        if (password.length > 20) passwordErrorMessages.push("is too long"); //checking for more than 20 characters
+        if (!uppercaseCheck.test(password)) passwordErrorMessages.push("does not contain an uppercase letter"); //checking for an uppercase character
+        if (!lowercaseCheck.test(password)) passwordErrorMessages.push("does not contain an lowercase letter"); //checking for an lowercase character
+        if (!numbersCheck.test(password)) passwordErrorMessages.push("does not contain a number"); //checking for a number
+        if (!passwordSpecialCharactersCheck.test(password)) passwordErrorMessages.push("does not contain a special character"); //checking for a special character
+        if (passwordErrorMessages.length > 0) throw passwordErrorStart + passwordErrorMessages.join(" + ") + ".";
+    }
+    catch (error) {
+        console.log(error);
+    }
+
+    //Confirm Password Validation
+    //Must match the password exactly.
+    let confirmPassword = document.forms["signUpForm"].elements["confirmPassword"].value;
+    let confirmPasswordErrorStart = "Your passwords ";
+    let confirmPasswordErrorMessages = [];
+    try {
+        if (confirmPassword != password) confirmPasswordErrorMessages.push("do not match");
+        if (confirmPasswordErrorMessages.length > 0) throw confirmPasswordErrorStart + confirmPasswordErrorMessages.join() + ".";
     }
     catch (error) {
         console.log(error);

@@ -4,6 +4,7 @@
 <title>Personal Site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
+<script src="proj6.js" defer></script>
 </head>
 <body>
     <div class="topnav">
@@ -16,6 +17,27 @@
         <a href="../index.html" class="portal">Portal</a>
     </div>
     <h1 class="blue-center">Sign Up</h1>
+
+    <form id="signUpForm">
+        <label for="fullName">Full Name:</label><br>
+        <input type="text" id="fullName" name="fullName"><br>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="password">Password:</label><br>
+        <span class="small-text">Password must be between 6 and 15 characters long, only contain letters and numbers (no special characters), and cannot start with a number.</span><br>
+        <input type="text" id="password" name="password"><br>
+        <label for="confirmPassword">Confirm Password:</label><br>
+        <input type="text" id="confirmPassword" name="confirmPassword"><br>
+        <label for="phoneNumber">Phone Number:</label><br>
+        <input type="text" id="phoneNumber" name="phoneNumber"><br>
+        <label for="dateOfBirth">Date of Birth:</label><br>
+        <input type="text" id="dateOfBirth" name="dateOfBirth"><br>
+        <label for="termsAndConditions">Agree to Terms and Conditions:</label><br>
+        <input type="checkbox" id="termsAndConditions" name="termsAndConditions"><br>
+        <input type="submit" value="Sign Up">
+    </form>
 
 
     <div class="link-container">

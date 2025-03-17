@@ -34,7 +34,7 @@ function validateSignUp(event) {
         if (fullNameErrorMessages.length > 0) throw fullNameErrorStart + fullNameErrorMessages.join(" + ") + ".";
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 
     //Username Validation
@@ -53,7 +53,7 @@ function validateSignUp(event) {
         if (usernameErrorMessages.length > 0) throw usernameErrorStart + usernameErrorMessages.join(" + ") + ".";
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 
     //Email Validation
@@ -69,7 +69,7 @@ function validateSignUp(event) {
         if (emailErrorMessages.length > 0) throw emailErrorStart + emailErrorMessages.join(" + ") + ".";
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 
     //Password Validation
@@ -93,7 +93,7 @@ function validateSignUp(event) {
         if (passwordErrorMessages.length > 0) throw passwordErrorStart + passwordErrorMessages.join(" + ") + ".";
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 
     //Confirm Password Validation
@@ -106,7 +106,7 @@ function validateSignUp(event) {
         if (confirmPasswordErrorMessages.length > 0) throw confirmPasswordErrorStart + confirmPasswordErrorMessages.join() + ".";
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 
     //Phone Number Validation
@@ -120,7 +120,7 @@ function validateSignUp(event) {
         if (phoneNumberErrorMessages.length > 0) throw phoneNumberErrorStart + phoneNumberErrorMessages.join(" + ") + ".";
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 
     //Date of Birth Validation
@@ -137,7 +137,7 @@ function validateSignUp(event) {
         if (dateOfBirthErrorMessages.length > 0) throw dateOfBirthErrorStart + dateOfBirthErrorMessages.join(" + ") + ".";
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 
     //Checkbox Validation
@@ -152,7 +152,7 @@ function validateSignUp(event) {
         }
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 
 }

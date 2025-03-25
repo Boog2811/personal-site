@@ -20,7 +20,37 @@
     </div>
     <h1 class="blue-center">Validation Testing</h1>
 
+    <!--Part 1-->
+    <h2 class="blue-center">Adding & Removing</h2>
+    <form id="selectionForm">
+        <label><input type="checkbox" value="Apple">Apple</label>
+        <label><input type="checkbox" value="Banana">Banana</label>
+        <label><input type="checkbox" value="Cherry">Cherry</label>
+    </form>
 
+    <button id="addSelectionButton">Add Selections</button>
+    <h3>Selected Items:</h3>
+    <ul id="selectedItems"></ul>
+
+    <!--Part 2-->
+    <h2 class="blue-center">Validating a Phone Number</h2>
+    <form id="phoneValidation">
+        <label for="phone">Enter Phone Number:</label>
+        <input type="text" id="phone" name="phone">
+        <button type="submit">Validate</button>
+    </form>
+    <p id="phoneMessage"></p>
+
+    <!--Part 3-->
+    <h2 class="blue-center">Displaying File Information</h2>
+    <form id="fileUploadForm">
+        <label for="fileInput">Upload a file:</label>
+        <input type="file" id="fileInput" accept=".txt">
+        <button type="submit">Upload</button>
+    </form>
+    <h3>File Contents:</h3>
+    <pre id="fileContents"></pre> <!--<pre> makes the text formatted more like the actual .txt file rather than "web-ified"-->
+    
 
     <div class="link-container">
         <a id="linktree" href="https://linktr.ee/Boog2811" target="_blank">Find me elsewhere on the internet!</a>

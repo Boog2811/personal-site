@@ -21,9 +21,3 @@ class Task {
         return this.completed ? `${this.name} (Completed)` : this.name;
     }
 }
-
-// Example usage (commented out, used in index.html instead):
-// let task1 = new Task("Finish homework");
-// console.log(task1.getDetails()); // Output: Finish homework
-// task1.markCompleted();
-// console.log(task1.getDetails()); // Output: Finish homework (Completed)

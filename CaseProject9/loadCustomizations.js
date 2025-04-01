@@ -1,3 +1,6 @@
+//this is a separate file that is a stripped down version of proj9.js in order to faciliate loading the customizations on every page, not just customization.html
+//as such, it just has the capabilities to load the values from cookies, and not the URL.
+
 //get the value of the cookie for name
 function getCookie(name) {
     // console.log("getting " + name + " from cookie")

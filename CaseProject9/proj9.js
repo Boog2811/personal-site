@@ -12,7 +12,7 @@ function getQueryParams() {
 //creates cookies with a 7 day expiration date
 function createCookie(name, value) {
     let expirationDate = new Date();
-    expirationDate.setTime(date.getTime() + 7 * 24 * 60 * 60 * 1000); //sets the expiration time to 7 days from creation
+    expirationDate.setTime(expirationDate.getTime() + 7 * 24 * 60 * 60 * 1000); //sets the expiration time to 7 days from creation
     document.cookie = `${name}=${value}; expires=${expirationDate.toUTCString()}; path=/`;
 }
 

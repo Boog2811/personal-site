@@ -27,9 +27,9 @@ function applyCustomizations(bgColor, textColor, fontSize) {
 window.onload = function() {
 
     //otherwise look for cookies
-    if (!bgColor) bgColor = getCookie('bgColor');
-    if (!textColor) textColor = getCookie('textColor');
-    if (!fontSize) fontSize = getCookie('fontSize');
+    let bgColor = getCookie('bgColor');
+    let textColor = getCookie('textColor');
+    let fontSize = getCookie('fontSize');
 
     //apply the customizations
     applyCustomizations(bgColor, textColor, fontSize);

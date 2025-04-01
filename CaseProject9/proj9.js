@@ -29,6 +29,7 @@ function getCookie(name) {
 
 //applies the customization settings
 function applyCustomizations(bgColor, textColor, fontSize) {
+    //sets the background color, text color, and font size according to the user's customizations   
     if (bgColor) document.body.style.backgroundColor = bgColor;
     if (textColor) document.body.style.color = textColor;
     if (fontSize) document.body.style.fontSize = fontSize + 'px';

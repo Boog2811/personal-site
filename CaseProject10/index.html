@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="lightbox.css">
+<script src="proj5Lightbox.js" defer></script>
+<script src="loadCustomizations.js" defer></script>
+</head>
+<body>
+    <div class="topnav">
+        <a href="index.html" class="active">Home</a>
+        <a href="games.html">Games</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="primes.html">Prime Numbers</a>
+        <a href="signUp.html">Sign Up</a>
+        <a href="validation.html">Validation</a>
+        <a href="taskManager.html">Tasks</a>
+        <a href="customize.html">Customization</a>
+        <a href="../index.html" class="portal">Portal</a>
+    </div>
+    <h1 class="blue-center">James Emanuel</h1>
+
+    <h2 class="blue-center">The requirements are on the <a href="customize.html">Customization</a> page, with corresponding JS in <a href="proj9.js">proj9.js</a> and <a href="loadCustomizations.js">loadCustomizations.js</a>.</h2>
+
+    <p>Hello everyone! This is a personal site for you to learn more about me and connect with me if desired!</p>
+    <p>If you'd like to learn more about me, please go to the <a href="about.html">About</a> page!</p>
+    <p>If you'd like to contact me, please go to the <a href="contact.html">Contact</a> page!</p>
+    <!--Due to the addition of the other pages, most of the content of the site has been moved off of the Home/Index page, but this page will be populated with more as time passes.-->
+    <h2>Plan for this Semester</h2>
+    <p>For this semester, I plan to flesh out this page to hold more and more information about myself, eventually being able to make it into a personal site for people to learn more about me.</p>
+
+    <!--Proj 5 Requirement 1: Lightbox-->
+    <!--HTML for this requirement is below this comment-->
+    <!--CSS for this requirement is in lightbox.css-->
+    <!--JS for this requirement is in proj5Lightbox.js-->
+    <h2>Recent Happenings</h2>
+    <p>Recently, I've been playing a trivia game hosted on Discord called Quiz Planet, and it's been kinda funny. The questions are very clearly AI generated, although I hadn't come across one that was blatantly wrong yet. That was, until the other day...</p>
+
+    <p>Below I've put a blurred image of the question I found, and you can click it to unblur and see the question. Although, I have to warn you first, it's painfully obvious that no one checked this question LOL</p>
+
+    <!--This displays the blurred image. The blur is done within the image itself, not through any HTML/CSS/JS programming.-->
+    <div class="lightbox-container">
+        <img src="blurredQuestion.png" alt="Thumbnail Image" class="preview-image" id="preview">
+    </div>
+
+    <!--This brings the image to be fullscreen-->
+    <div class="overlay" id="imageOverlay">
+        <span class="close-btn" id="closeOverlay">&times;</span>
+        <img src="unblurredQuestion.png" alt="Expanded Image" id="overlayImage">
+    </div>
+
+    <p>Yeah, that is not a thing that exists from the research I did after being shocked about a "drag" hotkey existing.</p>
+
+    <!--display the user's current preferences -->
+    <p id="user-preferences">Your current settings will appear here.</p>
+
+    <div class="link-container">
+        <a id="linktree" href="https://linktr.ee/Boog2811" target="_blank">Find me elsewhere on the internet!</a>
+    </div>
+
+</body>
+</html>

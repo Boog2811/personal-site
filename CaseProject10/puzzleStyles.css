@@ -6,10 +6,6 @@ body {
     padding: 20px;
 }
 
-h1 {
-    color: #333;
-}
-
 .info-bar {
     margin: 20px;
     display: flex;
@@ -52,6 +48,7 @@ button {
     border: 2px dashed #999;
 }
 
+/*This is the style that changes the border of the drop zone when a piece is being held above it*/
 .grid-container .drop-zone.hovered {
     border: 3px dashed #ff5722;
     background-color: rgba(255, 87, 34, 0.1);
@@ -63,10 +60,10 @@ button {
 #message {
     margin-top: 20px;
     font-size: 1.5em;
-    color: green;
+    color: blue;
     font-weight: bold;
 }
 
 .hidden {
     display: none;
-} 
+}

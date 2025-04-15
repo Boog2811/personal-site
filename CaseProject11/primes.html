@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<script src="loadCustomizations.js" defer></script>
+</head>
+<body>
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="primes.html" class="active">Prime Numbers</a>
+        <a href="signUp.html">Sign Up</a>
+        <a href="validation.html">Validation</a>
+        <a href="customize.html">Customization</a>
+        <a href="puzzle.html">Puzzle Game</a>
+        <a href="../index.html" class="portal">Portal</a>
+    </div>
+    <h2 class="blue-center">Prime Numbers</h2>
+    <p>This page will display all of the numbers from 1 to the typed number when you push the button, and if they are prime or composite.</p>
+
+    <!--Short form to accept the number input from the user-->
+    <form id="inputForm">
+        <label for="maxNum">Max Number:</label><br>
+        <input type="text" id="maxNum" name="maxNum"><br>
+    </form>
+    <button type="button" id="primeButton">Press me to display all the primes!</button>
+
+    <!--Tag for error handling if the user inputs nothing or does not enter a number.-->
+    <p id="errorTextBox"></p>
+
+    <!--Tags that actually display the numbers-->
+    <p><strong>Primes: </strong> <span id="printPrimes"></span></p>
+    <p><strong>Composites: </strong> <span id="printComposites"></span></p>
+
+
+    <script src="primes.js" defer></script>
+
+    <div class="link-container">
+        <a id="linktree" href="https://linktr.ee/Boog2811" target="_blank">Find me elsewhere on the internet!</a>
+    </div>
+
+    <h2 class="blue-center">Highly Composite Numbers</h2>
+    <p>If we're gonna talk about prime numbers, we have to talk about the interesting world of highly composite numbers!</p>
+    <p>Highly composite numbers are numbers with more factors than any number less than them!</p>
+    <p>This happens due to there being a new way to split up the number, better demonstrated by the image shown below.</p>
+    <!--Image for the games page-->
+    <div class="image-container">
+        <img src="highlyCompositeNumbersRepresentation.png" alt="Highly composite numbers demonstration" class="responsive-img">
+        <p>Image sourced from <a href="https://en.wikipedia.org/wiki/Highly_composite_number">Wikipedia</a></p>
+    </div>
+
+
+    <p>If you'd like to learn more, here's the <a href="https://en.wikipedia.org/wiki/Highly_composite_number">Wikipedia article</a> that talks about highly composite numbers!</p>
+
+    
+    <!--display the user's current preferences -->
+    <p id="user-preferences">Your current settings will appear here.</p>
+
+    <div class="link-container">
+        <a id="linktree" href="https://linktr.ee/Boog2811" target="_blank">Find me elsewhere on the internet!</a>
+    </div>
+</body>
+</html>

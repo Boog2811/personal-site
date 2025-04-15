@@ -1,5 +1,5 @@
 //this script uses JSONPlaceholder: https://jsonplaceholder.typicode.com/
-//tt demonstrates using both fetch() and XMLHttpRequest to get data
+//it demonstrates using both fetch() and XMLHttpRequest to get data
 
 document.getElementById('loadUsersBtn').addEventListener('click', loadUsers);
 document.getElementById('loadPostsBtn').addEventListener('click', loadPosts);

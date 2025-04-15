@@ -4,7 +4,9 @@
 <title>Personal Site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="apiStyles.css">
 <script src="loadCustomizations.js" defer></script>
+<script src="proj11.js" defer></script>
 </head>
 <body>
     <div class="topnav">
@@ -22,6 +24,16 @@
         <a href="../index.html" class="portal">Portal</a>
     </div>
     <h1 class="blue-center">API Test</h1>
+
+    <h2>JSONPlaceholder User Info [fetch()]</h2>
+    <button id="loadUsersBtn">Load Users (Fetch)</button>
+    <div id="usersContainer"></div>
+    
+    <h2>Get Posts for User ID [XMLHttpRequest]</h2>
+    <p>Enter User ID (1-10)</p>
+    <input type="number" id="userIdInput" placeholder="ID" min="1" max="10" />
+    <button id="loadPostsBtn">Load Posts (XHR)</button>
+    <div id="postsContainer"></div>
 
     <!--display the user's current preferences -->
     <p id="user-preferences">Your current settings will appear here.</p>
